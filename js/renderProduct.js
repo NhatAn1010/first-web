@@ -4,7 +4,7 @@ function renderBestProduct(products)
 
     products.forEach(p => {
         html += `
-            <div class="col-6 col-md-3 col-lg-3">
+            <div class="col-6 col-md-3 col-lg-3 mb-4">
                 <div class="product card shadow">
                     <div class="card-body">
                         <div class="card-head mb-1 d-flex justify-content-center">
@@ -50,7 +50,7 @@ function renderDiscountProduct(products)
 
     products.forEach(p => {
         html += `
-            <div class="col-6 col-md-3 col-lg-3">
+            <div class="col-6 col-md-3 col-lg-3 mb-4">
                 <div class="product card shadow">
                     <div class="card-body">
                         <div class="card-head mb-1 d-flex justify-content-center">
@@ -102,7 +102,7 @@ function renderForyouProduct(products)
 
     products.forEach(p => {
         html += `
-            <div class="col-6 col-md-3 col-lg-3">
+            <div class="col-6 col-md-3 col-lg-3 mb-4">
                 <div class="product card shadow">
                     <div class="card-body">
                         <div class="card-head mb-1 d-flex justify-content-center">
