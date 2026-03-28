@@ -44,8 +44,10 @@ body {
 }
 
 .tab-btn.active {
-    color: #000;
-    border-bottom: 3px solid #000; 
+    /* color: #000; */
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    color: green;
 }
 
 .tab-btn:hover {
@@ -129,7 +131,11 @@ body {
     background-color: #333;
 }
 
-
+.submit-btn a
+{
+    text-decoration: none;
+    color: white;
+}
 
 #eye1 {
     cursor: pointer;

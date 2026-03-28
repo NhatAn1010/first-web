@@ -53,15 +53,27 @@ function renderProductDetail(p)
                             </div>
                         </div>
 
-                        <div class="product-order d-flex pb-3">
-                            <div class="product-order--icon d-flex">
-                                <button class="btn btn-danger d-flex align-items-center">
-                                    <i class="bi bi-cart fs-3"></i>
-                                    <h4 class="ms-3">Thêm vào giỏ hàng</h4>
-                                </button>
-                                <button class="ms-5 btn btn-danger ps-5 pe-5">
-                                    <h4>Mua ngay</h4>
-                                </button>
+                        <div class="discript-product fw-bold">
+                            <p>
+                                Mô tả: ${p.description}
+                            </p>
+                        </div>
+
+                        <div class="product-order pb-3 ">
+                            <div class="row product-order--icon g-2 ">
+                                <div class="col-12 col-md-6">
+                                    <button class="btn btn-danger h-100 w-75 d-flex align-items-center justify-content-center rounded-pill">
+                                        <i class="bi bi-cart fs-3"></i>
+                                        <h4 class="ms-3 mb-0">Thêm vào giỏ hàng</h4>
+                                    </button>
+                                </div>
+
+                                <div class="col-12 col-md-6 ">
+                                    <button class="btn btn-danger h-100 w-75 d-flex align-items-center justify-content-center rounded-pill">
+                                        <i class="bi bi-cart-fill fs-3"></i>
+                                        <h4 class="ms-3 mb-0">Mua ngay</h4>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -103,6 +115,6 @@ fetch(`../data/${category}-product.json`)
 .then(
     data => {
         const currentProduct = data.find(p => p.id === findId);
-        if(currentProduct) renderProductDetail(currentProduct);      
+        currentProduct? renderProductDetail(currentProduct) : console.log("Không tìm thấy");
     }
 )

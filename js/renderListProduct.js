@@ -1,4 +1,4 @@
-export function renderPenProduct(products)
+export function renderListProduct(products)
 {
     let html = "";
 
@@ -27,7 +27,7 @@ export function renderPenProduct(products)
                         </div>
 
                         <div class="price-sold d-flex justify-content-center">
-                            <a href="./product_detail.html?id=${p.id}&cat=pen" class="btn btn-primary">
+                            <a href="./product_detail.html?id=${p.id}&cat=${p.category}" class="btn btn-primary">
                                 <i class="bi bi-eye"></i>
                                 Xem chi tiết
                             </a>
@@ -38,6 +38,6 @@ export function renderPenProduct(products)
         `;
     });
 
-    document.getElementById("list-product-pen").innerHTML = html;
+    document.getElementById("list-product").innerHTML = html;
 }
 

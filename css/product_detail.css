@@ -17,13 +17,21 @@
     width: 30px;
 }
 
+
+
 .product-order--icon > button
 {
-    border-radius: 1000px;
+    height: 100px;
+}
+
+.btn
+{
+    transition: 0.3s ease-out;
 }
 
 .btn:hover
 {
+    transform: scale(1.03);
     color: yellow;
     background-color: green;
 }
