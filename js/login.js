@@ -11,14 +11,12 @@ const registerTab = document.getElementById('register');
 
 function clearTabColor()
     {
-        loginTab.style.color = "";
-        loginTab.style.textDecoration = "";
-        loginTab.style.textUnderlineOffset = "";
 
-
-        registerTab.style.color = "";
-        registerTab.style.textDecoration = "";
-        registerTab.style.textUnderlineOffset = "";
+        [loginTab, registerTab].forEach(p => {
+            p.style.color = "";
+            p.style.textDecoration = "";
+            p.style.textUnderlineOffset = "";
+        })
     }
 
     loginTab.addEventListener('click', () => {
