@@ -70,7 +70,7 @@ function togglePassword() {
 
 function onPage()
 {
-    window.location.href = "../home/home.html";
+    window.location.href = "home/home.html";
 }
 
 const submitBtn = document.getElementById('submit-btn');
