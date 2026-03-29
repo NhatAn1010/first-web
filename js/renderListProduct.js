@@ -1,3 +1,5 @@
+
+
 export function renderListProduct(products)
 {
     let html = "";
@@ -35,8 +37,11 @@ export function renderListProduct(products)
                     </div>
                 </div>
             </div>
+
+            
         `;
     });
+    
 
     document.getElementById("list-product").innerHTML = html;
 }

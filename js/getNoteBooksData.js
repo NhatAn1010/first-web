@@ -3,10 +3,8 @@ import { callPagination } from "./pagination.js";
 
 
 
-fetch('../data/pen-product.json')
+fetch('../data/notebooks-product.json')
 .then(r => r.json())
 .then(data => {
     callPagination(data, renderListProduct);
 });
-
-

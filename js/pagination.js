@@ -5,7 +5,14 @@ export function callPagination(dataProduct, renderProduct)
     const products = dataProduct;
     const totalPage = Math.ceil(products.length / perPage);
 
-
+    window.changePage = changePage;
+    renderPage();
+    
+    function changePage(page) {
+        currentPage = page;
+        renderPage();
+        window.scrollTo(0, 0);
+    }
     function renderPage()
     {
         let start = (currentPage - 1) * perPage;
@@ -17,11 +24,6 @@ export function callPagination(dataProduct, renderProduct)
         pagination();
     }
 
-    function changePage(page) {
-        currentPage = page;
-        renderPage();
-        window.scrollTo(0, 0);
-    }
 
     function pagination() {
         let html = "";
@@ -60,8 +62,4 @@ export function callPagination(dataProduct, renderProduct)
                 if(currentPage < totalPage) changePage(currentPage + 1);    
             })
         }
-
-
-    window.changePage = changePage;
-    renderPage();
 }
