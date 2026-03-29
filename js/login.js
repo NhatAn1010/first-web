@@ -10,14 +10,13 @@ const loginTab = document.getElementById('login');
 const registerTab = document.getElementById('register');
 
 function clearTabColor()
-    {
-
-        [loginTab, registerTab].forEach(p => {
-            p.style.color = "";
-            p.style.textDecoration = "";
-            p.style.textUnderlineOffset = "";
-        })
-    }
+{
+    [loginTab, registerTab].forEach(p => {
+        p.style.color = "";
+        p.style.textDecoration = "";
+        p.style.textUnderlineOffset = "";
+    })
+}
 
     loginTab.addEventListener('click', () => {
         clearTabColor();
@@ -32,11 +31,6 @@ function clearTabColor()
         registerTab.style.textDecoration = "underline";
         registerTab.style.textUnderlineOffset = "10px";
     })
-
-
-function checkSignup() {
-    
-}
 
 
 function togglePassword() {
@@ -77,6 +71,3 @@ submitBtn.addEventListener('click', (e) => {
     e.preventDefault();
     onPage();
 })
-
-
-
