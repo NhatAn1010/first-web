@@ -69,7 +69,7 @@ function renderDiscountProduct(products)
                                     <p class="text-danger text-decoration-line-through">
                                         ${p.originalPrice.toLocaleString('vi-VN')}đ
                                     </p>
-                                    <span class="fw-bold text-muted text-decoration-none ms-2">${p.discount} off</span>
+                                    <span class="fw-bold text-muted text-decoration-none ms-2">${(p.discount * 100).toFixed(0)} off</span>
                                 </div> 
                                 <span class="fw-bold discount-price bg-danger p-1">${p.price.toLocaleString('vi-VN')}đ </span> 
                             </div>
