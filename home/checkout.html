@@ -236,6 +236,7 @@
                         <div class="flex-grow-1">
                             <h4>${item.name}</h4>
                             <h5 class="text-success">Số lượng: ${item.quantity}</h5>
+                            <h6 class="text-danger">Giá: ${item.price.toLocaleString('vi-VN')}đ</h6>
                         </div>
                     `;
                     container.appendChild(row);
