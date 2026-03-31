@@ -137,7 +137,6 @@ function renderForyouProduct(products)
     });
 
     document.getElementById("foryou-product").innerHTML = html;
-    // document.getElementById('product-item--outline').classList.add('text-outline-success');
 }
 
 

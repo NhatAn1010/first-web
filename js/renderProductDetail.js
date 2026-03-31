@@ -52,18 +52,28 @@ function renderProductDetail(p) {
                             </div>
                         </div>
 
-                        <div class="product-order d-flex">
-                            <div class="product-order--icon d-flex">
-                                <button id="add-cart" class="rounded-pill h-75 btn btn-danger d-flex align-items-center"
-                                    onclick='addToCart({...${JSON.stringify(p)}}, parseInt(document.getElementById("product-value").value))'>
+                        <div class="description">
+                            <h5>
+                                Mô tả: ${p.description}
+                            </h5>
+                        </div>
+
+                        <div class="product-order d-flex flex-column flex-md-row justify-content-center w-100">
+                            <div class="col-12 col-md-6 mx-1 my-3">
+                                <button id="add-cart" class="btn btn-danger rounded-pill w-100 h-100"
+                                    onclick=''>
                                     <i class="bi bi-cart fs-3"></i>
-                                    <h4 class="ms-3">Thêm vào giỏ hàng</h4>
-                                </button>
-                                
-                                <button class="ms-5 btn btn-danger ps-5 pe-5 rounded-pill h-75" id="buy-now">
-                                    <h4>Mua ngay</h4>
+                                    <span class="fw-bold fs-3 mx-3">Thêm vào giỏ hàng</span>
                                 </button>
                             </div>
+                            
+
+
+                            <div class="col-12 col-md-6 mx-1 my-3">
+                                <button class="btn btn-danger rounded-pill w-100 h-100" id="buy-now">
+                                    <span class="fw-bold fs-3 mx-3">Mua ngay</span>
+                                </button>
+                            </div>       
                         </div>
                         <p id="note"></p>
                     </div>
@@ -73,13 +83,19 @@ function renderProductDetail(p) {
 
     document.getElementById("product-detail").innerHTML = html;
     
-    
+
     document.getElementById('add-cart').addEventListener('click', () => {
-        document.getElementById('note').innerText = `Đã thêm thành công vào giỏ hàng!`;
-        document.getElementById('note').classList.add('text-success');
+        const quantity = parseInt(document.getElementById("product-value").value);
+        addToCart(p, quantity); 
+    });
+
+    const note = document.getElementById('note');
+    document.getElementById('add-cart').addEventListener('click', () => {
+        note.innerText = `Đã thêm thành công vào giỏ hàng!`;
+        note.classList.add('text-success');
         setTimeout(() => {
             note.innerText = "";
-        }, 500);
+        }, 900);
     })
 
     document.getElementById("buy-now").addEventListener("click", () => {
@@ -102,7 +118,7 @@ function renderProductDetail(p) {
         if (currentValue > 1) {
             quantityInput.value = currentValue - 1;
         } else {
-            alert("số lượng không được nhỏ hơn 1")
+            alert("số lượng không được nhỏ hơn 1");
         }
     });
 }
