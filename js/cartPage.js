@@ -14,7 +14,7 @@ function renderCart() {
         row.classList.add("cart-item", "mb-3", "pt-5");
         row.innerHTML = `
             <div class="d-flex">
-            <img src="${item.image}" class="me-3" style="width:80px; height:80px; object-fit:cover;">
+            <img src="${item.image}" class="me-3" style="width:150px; height:150px; object-fit:contain;">
             <div class="row w-100 justify-content-center">
                 <div class="col-12 col-md-9">  
                 <h5>${item.name}</h5>
