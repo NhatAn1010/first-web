@@ -212,6 +212,10 @@
 
         <script src="../js/cart.js"></script>
         <script>
+            window.onload = () => {
+                window.scrollTo(0,0);
+            }
+            
             const cart = getCart();
             function renderCheckoutCart() {
                 const container = document.getElementById("cart-items");
@@ -277,9 +281,8 @@
                         localStorage.removeItem("cart");
 
                         location.reload();
+                        
                     }
-
-                    
                 });
             });
         </script>
