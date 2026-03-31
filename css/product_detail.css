@@ -38,5 +38,6 @@
 }
 
 #product-detail img:hover {
+    outline: 1px red solid;
     transform: scale(1.05); 
 }

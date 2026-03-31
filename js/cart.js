@@ -5,7 +5,6 @@ function getCart() {
 function saveCart(cart) {
     localStorage.setItem("cart", JSON.stringify(cart));
 }
-
 function addToCart(product, quantity = 1) {
     let cart = getCart();
     const index = cart.findIndex(item => item.id === product.id);
@@ -22,6 +21,7 @@ function addToCart(product, quantity = 1) {
     }
     saveCart(cart);
 }
+
 
 function removeFromCart(productId) {
     let cart = getCart();

@@ -29,9 +29,11 @@ export function renderListProduct(products)
                         </div>
 
                         <div class="price-sold d-flex justify-content-center">
-                            <a href="./product_detail.html?id=${p.id}&cat=${p.category}" class="btn btn-primary">
-                                <i class="bi bi-eye"></i>
-                                Xem chi tiết
+                            <a href="./product_detail.html?id=${p.id}&cat=${p.category}" >
+                                <button class="btn btn-primary">
+                                    <i class="bi bi-eye"></i>
+                                    Xem chi tiết
+                                </button>
                             </a>
                         </div>
                     </div>
@@ -41,8 +43,8 @@ export function renderListProduct(products)
             
         `;
     });
-    
 
     document.getElementById("list-product").innerHTML = html;
+
 }
 
