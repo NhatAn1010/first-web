@@ -234,8 +234,8 @@
                     row.innerHTML = `
                         <img src="${item.image}" class="cart-img me-3">
                         <div class="flex-grow-1">
-                            <h6>${item.name}</h6>
-                            <p>${item.quantity} x ${item.price.toLocaleString('vi-VN')}đ = ${(item.quantity * item.price).toLocaleString('vi-VN')}đ</p>
+                            <h4>${item.name}</h4>
+                            <h5 class="text-success">Số lượng: ${item.quantity}</h5>
                         </div>
                     `;
                     container.appendChild(row);
