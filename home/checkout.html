@@ -212,8 +212,8 @@
 
         <script src="../js/cart.js"></script>
         <script>
+            const cart = getCart();
             function renderCheckoutCart() {
-                const cart = getCart();
                 const container = document.getElementById("cart-items");
                 container.innerHTML = "";
 
@@ -265,12 +265,21 @@
                         document.getElementById('help-text').classList.add('text-danger');
                         return;
                     }
+                    else
+                    {
+                        document.getElementById('help-text').innerText = 'Đã đặt hàng thành công';
+                        
+                        setTimeout(() => {
+                            document.getElementById('help-text').innerText = '';
+                        }, 700);
+                        document.getElementById('help-text').classList.remove('text-danger');
+                        document.getElementById('help-text').classList.add('text-success');
+                        localStorage.removeItem("cart");
 
-                    document.getElementById('help-text').innerText = 'Đã đặt hàng thành công';
-                    document.getElementById('help-text').classList.remove('text-danger');
-                    document.getElementById('help-text').classList.add('text-success');
-                    localStorage.removeItem("cart");
-                    window.location.href = "home.html";
+                        location.reload();
+                    }
+
+                    
                 });
             });
         </script>

@@ -17,21 +17,26 @@
     width: 30px;
 }
 
-
-
 .product-order--icon > button
 {
-    height: 100px;
-}
-
-.btn
-{
-    transition: 0.3s ease-out;
+    border-radius: 1000px;
 }
 
 .btn:hover
 {
-    transform: scale(1.03);
-    color: yellow;
-    background-color: green;
+    color: darkred;
+    background-color: aliceblue;
+}
+#product-detail {
+    border-radius: 20px;
+    padding: 30px;
+  
+}
+#product-detail img {
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+#product-detail img:hover {
+    transform: scale(1.05); 
 }
