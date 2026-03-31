@@ -55,8 +55,9 @@ header
 
 .dropdown-item:hover
 {
-    transform: scale(1.05);
-    color: blue;
+    background-color: transparent;
+    transform: scale(1.03);
+    color: red;
 }
 
 .dropdown-item
@@ -108,8 +109,14 @@ header
 
 .product:hover
 {
-    transform: scale(1.03);
+    outline: 1px red solid;
+    transform: scale(1.02);
     overflow: hidden;
+}
+
+.btn:hover
+{
+    background-color: green;
 }
 
 .card-body a

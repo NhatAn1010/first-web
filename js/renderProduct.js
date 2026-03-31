@@ -5,7 +5,7 @@ function renderBestProduct(products)
     products.forEach(p => {
         html += `
             <div class="col-6 col-md-3 col-lg-3 mb-4">
-                <div class="product card shadow">
+                <div id="product-item--outline" class="product card shadow">
                     <div class="card-body">
                         <div class="card-head mb-1 d-flex justify-content-center">
                             <img src="${p.image}" alt="">
@@ -51,7 +51,7 @@ function renderDiscountProduct(products)
     products.forEach(p => {
         html += `
             <div class="col-6 col-md-3 col-lg-3 mb-4">
-                <div class="product card shadow">
+                <div id="product-item--outline" class="product card shadow">
                     <div class="card-body">
                         <div class="card-head mb-1 d-flex justify-content-center">
                             <img src="${p.image}" alt="">
@@ -103,7 +103,7 @@ function renderForyouProduct(products)
     products.forEach(p => {
         html += `
             <div class="col-6 col-md-3 col-lg-3 mb-4">
-                <div class="product card shadow">
+                <div id="product-item--outline" class="product card shadow">
                     <div class="card-body">
                         <div class="card-head mb-1 d-flex justify-content-center">
                             <img src="${p.image}" alt="">
@@ -137,7 +137,9 @@ function renderForyouProduct(products)
     });
 
     document.getElementById("foryou-product").innerHTML = html;
+    // document.getElementById('product-item--outline').classList.add('text-outline-success');
 }
+
 
 fetch("../data/home-product.json")
 .then(res => res.json())

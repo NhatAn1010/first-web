@@ -13,6 +13,7 @@ export function callPagination(dataProduct, renderProduct)
         renderPage();
         window.scrollTo(0, 0);
     }
+
     function renderPage()
     {
         let start = (currentPage - 1) * perPage;
@@ -25,7 +26,8 @@ export function callPagination(dataProduct, renderProduct)
     }
 
 
-    function pagination() {
+    function pagination() 
+    {
         let html = "";
         let htmlPrev = "";
         let htmlCont = "";
@@ -36,30 +38,32 @@ export function callPagination(dataProduct, renderProduct)
             </button>
         `;
         for(let i = 1; i <= totalPage;i += 1)
-            {
+        {
             html += `               
                 <button class="btn ms-2 ${(i === currentPage)? "btn-success" : "btn-white"}" onclick="changePage(${i})">
                 ${i}
                 </button>
-                `;
-            }
-            htmlCont += `
-            <button id="cont-button" class="btn btn-danger ms-2">
-            >
-            </button>
             `;
-            document.getElementById("pagination").innerHTML = htmlPrev + html + htmlCont;
-
-            const prevButton = document.getElementById("prev-button");
-            const contButton = document.getElementById("cont-button");
-
-            prevButton.addEventListener('click', () => {
-                if(currentPage > 1) changePage(currentPage - 1); 
-
-            })
-
-            contButton.addEventListener('click', () => {
-                if(currentPage < totalPage) changePage(currentPage + 1);    
-            })
         }
+
+
+        htmlCont += `
+        <button id="cont-button" class="btn btn-danger ms-2">
+        >
+        </button>
+        `;
+        document.getElementById("pagination").innerHTML = htmlPrev + html + htmlCont;
+
+        const prevButton = document.getElementById("prev-button");
+        const contButton = document.getElementById("cont-button");
+
+        prevButton.addEventListener('click', () => {
+            if(currentPage > 1) changePage(currentPage - 1); 
+
+        })
+
+        contButton.addEventListener('click', () => {
+            if(currentPage < totalPage) changePage(currentPage + 1);    
+        })
+    }
 }

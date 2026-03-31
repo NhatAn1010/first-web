@@ -1,8 +1,7 @@
-function renderProductDetail(p)
-{
+function renderProductDetail(p) {
     let html = "";
 
-        html += `
+    html += `
             <div class="card-body h-100">
                 <div class="row">
                     <div class="col-md-4 col-12">
@@ -53,61 +52,63 @@ function renderProductDetail(p)
                             </div>
                         </div>
 
-                        <div class="discript-product fw-bold">
-                            <p>
-                                Mô tả: ${p.description}
-                            </p>
-                        </div>
-
-                        <div class="product-order pb-3 ">
-                            <div class="row product-order--icon g-2 ">
-                                <div class="col-12 col-md-6">
-                                    <button class="btn btn-danger h-100 w-75 d-flex align-items-center justify-content-center rounded-pill">
-                                        <i class="bi bi-cart fs-3"></i>
-                                        <h4 class="ms-3 mb-0">Thêm vào giỏ hàng</h4>
-                                    </button>
-                                </div>
-
-                                <div class="col-12 col-md-6 ">
-                                    <button class="btn btn-danger h-100 w-75 d-flex align-items-center justify-content-center rounded-pill">
-                                        <i class="bi bi-cart-fill fs-3"></i>
-                                        <h4 class="ms-3 mb-0">Mua ngay</h4>
-                                    </button>
-                                </div>
+                        <div class="product-order d-flex">
+                            <div class="product-order--icon d-flex">
+                                <button id="add-cart" class="rounded-pill h-75 btn btn-danger d-flex align-items-center"
+                                    onclick='addToCart({...${JSON.stringify(p)}}, parseInt(document.getElementById("product-value").value))'>
+                                    <i class="bi bi-cart fs-3"></i>
+                                    <h4 class="ms-3">Thêm vào giỏ hàng</h4>
+                                </button>
+                                
+                                <button class="ms-5 btn btn-danger ps-5 pe-5 rounded-pill h-75" id="buy-now">
+                                    <h4>Mua ngay</h4>
+                                </button>
                             </div>
                         </div>
+                        <p id="note"></p>
                     </div>
                 </div>
             </div>
         `;
 
     document.getElementById("product-detail").innerHTML = html;
+    
+    
+    document.getElementById('add-cart').addEventListener('click', () => {
+        document.getElementById('note').innerText = `Đã thêm thành công vào giỏ hàng!`;
+        document.getElementById('note').classList.add('text-success');
+        setTimeout(() => {
+            note.innerText = "";
+        }, 500);
+    })
 
+    document.getElementById("buy-now").addEventListener("click", () => {
+        
+        window.location.href = "checkout.html";
+    });
+
+    
     const btnMinus = document.getElementById('btn-minus');
     const btnPlus = document.getElementById('btn-plus');
     const quantityInput = document.getElementById('product-value');
-
-    // Xử lý khi bấm dấu Cộng (+)
+    
     btnPlus.addEventListener('click', () => {
         let currentValue = parseInt(quantityInput.value);
         quantityInput.value = currentValue + 1;
     });
 
-    // Xử lý khi bấm dấu Trừ (-)
     btnMinus.addEventListener('click', () => {
         let currentValue = parseInt(quantityInput.value);
         if (currentValue > 1) {
             quantityInput.value = currentValue - 1;
-        }
-        else
-        {
+        } else {
             alert("số lượng không được nhỏ hơn 1")
         }
     });
 }
 
 const params = new URLSearchParams(window.location.search);
-const findId = params.get("id");          
+const findId = params.get("id");
 const category = params.get("cat");
 
 fetch(`../data/${category}-product.json`)
@@ -115,6 +116,6 @@ fetch(`../data/${category}-product.json`)
 .then(
     data => {
         const currentProduct = data.find(p => p.id === findId);
-        currentProduct? renderProductDetail(currentProduct) : console.log("Không tìm thấy");
+        if (currentProduct) renderProductDetail(currentProduct);
     }
 )

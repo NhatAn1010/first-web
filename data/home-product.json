@@ -8,7 +8,8 @@
     "sold": 98,
     "vote": 150,
     "discount": 0.35,
-    "category": "home"
+    "category": "home",
+    "description": "Balo phong cách Hàn Quốc trẻ trung, chất liệu vải canvas chống thấm nhẹ, ngăn chứa rộng rãi phù hợp đi học và du lịch."
   },
   {
     "id": "sp2",
@@ -19,7 +20,8 @@
     "sold": 553,
     "vote": 150,
     "discount": 0.4,
-    "category": "home"
+    "category": "home",
+    "description": "Bộ dụng cụ hỗ trợ phát triển tư duy sáng tạo cho bé, bao gồm màu vẽ và giấy thủ công an toàn, không độc hại."
   },
   {
     "id": "sp3",
@@ -30,7 +32,8 @@
     "sold": 55,
     "vote": 150,
     "discount": 0.45,
-    "category": "home"
+    "category": "home",
+    "description": "Ấn bản tư liệu lịch sử phục vụ nghiên cứu và tìm hiểu về các giai đoạn chính trị thế giới thế kỷ 20."
   },
   {
     "id": "sp4",
@@ -41,7 +44,8 @@
     "sold": 51,
     "vote": 150,
     "discount": 0.35,
-    "category": "home"
+    "category": "home",
+    "description": "Keo nước độ dính cao, khô nhanh, thiết kế đầu bôi tiện lợi không làm bẩn tay, sản phẩm chính hãng Thiên Long."
   },
   {
     "id": "sp5",
@@ -52,7 +56,8 @@
     "image": "../img/product_img/pen/viet-xanh-005.png",
     "sold": 12,
     "vote": 345,
-    "category": "home"
+    "category": "home",
+    "description": "Mực gel viết cực trơn, nét chữ đều và đẹp. Tặng kèm ngòi thay thế giúp tiết kiệm chi phí sử dụng lâu dài."
   },
   {
     "id": "sp6",
@@ -63,7 +68,8 @@
     "image": "../img/product_img/art-supplies/vo-my-thuat.png",
     "sold": 300,
     "vote": 342,
-    "category": "home"
+    "category": "home",
+    "description": "Giấy định lượng 100Gms dày dặn, bề mặt mịn màng phù hợp cho ký họa chì, bút bi và các loại màu khô."
   },
   {
     "id": "sp7",
@@ -74,7 +80,8 @@
     "image": "../img/product_img/student-bag/cap-den.png",
     "sold": 50,
     "vote": 44,
-    "category": "home"
+    "category": "home",
+    "description": "Thiết kế chống trộm hiện đại, có ngăn đệm chống sốc cho laptop 15.6 inch, quai đeo êm ái chống đau vai."
   },
   {
     "id": "sp8",
@@ -85,7 +92,8 @@
     "image": "../img/product_img/glue-tape/ho-dan-queen.png",
     "sold": 1400,
     "vote": 34,
-    "category": "home"
+    "category": "home",
+    "description": "Hồ nước dán giấy phổ thông, độ bám dính tốt, là vật dụng không thể thiếu trong cặp sách của học sinh."
   },
   {
     "id": "sp9",
@@ -96,7 +104,8 @@
     "sold": 190,
     "vote": 150,
     "discount": 0.4,
-    "category": "home"
+    "category": "home",
+    "description": "Chất liệu da tổng hợp cao cấp không bong tróc, đường may tinh tế, mang lại vẻ ngoài sang trọng và cá tính."
   },
   {
     "id": "sp10",
@@ -107,7 +116,8 @@
     "sold": 30,
     "vote": 150,
     "discount": 0.3,
-    "category": "home"
+    "category": "home",
+    "description": "Dòng bút bi cao cấp TL-095 với cơ chế bấm nhẹ tay, mực xuống đều, không bị tắc hay lem mực khi viết nhanh."
   },
   {
     "id": "sp11",
@@ -118,7 +128,8 @@
     "sold": 36,
     "vote": 150,
     "discount": 0.4,
-    "category": "home"
+    "category": "home",
+    "description": "Sổ tay bìa cứng in chìm sang trọng, nội dung lồng ghép các câu châm ngôn truyền cảm hứng về quản trị và lãnh đạo."
   },
   {
     "id": "sp12",
@@ -129,6 +140,7 @@
     "sold": 360,
     "vote": 150,
     "discount": 0.3,
-    "category": "home"
+    "category": "home",
+    "description": "Cuốn sách kỹ năng sống bán chạy nhất mọi thời đại, giúp bạn cải thiện kỹ năng giao tiếp và tạo dựng mối quan hệ tốt đẹp."
   }
 ]
