@@ -18,19 +18,20 @@ function clearTabColor()
     })
 }
 
-    loginTab.addEventListener('click', () => {
-        clearTabColor();
-        loginTab.style.color = "green";
-        loginTab.style.textDecoration = "underline";
-        loginTab.style.textUnderlineOffset = "10px";
-    })
+function updateTabColor(p) {
+    clearTabColor();
+    p.style.color = "green";
+    p.style.textDecoration = "underline";
+    p.style.textUnderlineOffset = "10px";
+}
 
-    registerTab.addEventListener('click', () => {
-        clearTabColor();
-        registerTab.style.color = "green";
-        registerTab.style.textDecoration = "underline";
-        registerTab.style.textUnderlineOffset = "10px";
-    })
+loginTab.addEventListener('click', () => {
+    updateTabColor(loginTab);
+})
+
+registerTab.addEventListener('click', () => {
+    updateTabColor(registerTab);
+})
 
 
 function togglePassword() {
