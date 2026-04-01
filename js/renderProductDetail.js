@@ -99,7 +99,6 @@ function renderProductDetail(p) {
     })
 
     document.getElementById("buy-now").addEventListener("click", () => {
-        
         window.location.href = "checkout.html";
     });
 
@@ -107,7 +106,6 @@ function renderProductDetail(p) {
     const btnMinus = document.getElementById('btn-minus');
     const btnPlus = document.getElementById('btn-plus');
     const quantityInput = document.getElementById('product-value');
-    
     btnPlus.addEventListener('click', () => {
         let currentValue = parseInt(quantityInput.value);
         quantityInput.value = currentValue + 1;

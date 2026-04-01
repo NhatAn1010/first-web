@@ -60,6 +60,111 @@ function togglePassword() {
     }
 }
 
+/*
+    id = fullname
+    id = email
+    id = pass2
+    tên tối đa 2 chữ cái, viết hoa chữ cái đầu
+    ví dụ: Nguyễn Văn A
+
+    email  tối đa 10 chữ cái sau @
+ */
+
+function checkRegexTrue(p) {
+    p.innerText = "Nhập đúng";
+    p.style.color = "green"
+    setTimeout(() => {
+        p.innerText = "";
+    }, 400);
+}
+
+function checkRegexFalse(p)
+{
+    p.innerText = "Nhập sai, vui lòng kiểm tra kĩ";
+    p.style.color = "red";
+}
+
+function checkSignUp() {
+    const fullName = document.querySelector('#fullname');
+    const regexFullName = /^[A-Z][a-z]*(\s[A-Z][a-z]*)+$/;
+    const email = document.querySelector('#email');
+    const regexEmail = /^[A-Za-z0-9_]+@[a-z]{2,8}[.][a-z]{2,8}$/
+    const password = document.querySelector('#pass2');
+    const regexPassword = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z_@#$%0-9]{3,16}$/;
+    const newRegis = document.querySelector('#new-register');
+
+
+    const helpTextName = document.getElementById('help-text-name');
+    const helpTextEmail = document.getElementById('help-text-email');
+    const helpTextPass = document.getElementById('help-text-pass');
+    const helpTextRegis = document.getElementById('help-text-regis');
+
+    let checkName = false;
+    let checkEmail = false;
+    let checkPass = false;
+
+
+    fullName.addEventListener('input', () => {
+        if(regexFullName.test(fullName.value))
+        {
+            checkRegexTrue(helpTextName);
+            checkName = true;
+        }
+        else
+        {
+            checkRegexFalse(helpTextName);
+            checkName = false;
+        }
+    })
+
+    email.addEventListener('input', () => {
+        if(regexEmail.test(email.value))
+        {
+            checkRegexTrue(helpTextEmail);
+            checkEmail = true;
+        }
+        else
+        {
+            checkRegexFalse(helpTextEmail);
+            checkEmail = false;
+        }
+    });
+
+    password.addEventListener('input', () => {
+        if(regexPassword.test(password.value))
+        {
+            checkRegexTrue(helpTextPass);
+            checkPass = true;
+        }
+        else
+        {
+            checkRegexFalse(helpTextPass);
+            checkPass = false;
+        }
+    })
+
+    newRegis.addEventListener('click', () => {
+        if(checkName && checkEmail && checkPass)
+        {
+            helpTextRegis.innerText = "Đăng kí thành công";
+            helpTextRegis.style.color = "green";
+            switchTab('login');
+            clearTabColor();
+            const loginTab = document.getElementById('login');
+            loginTab.style.color = "green";
+            loginTab.style.textDecoration = "underline";
+            loginTab.style.textUnderlineOffset = "10px";
+        }
+        else
+        {
+            helpTextRegis.innerText = "Đăng kí thất bại, mời xem lại tên, email hoặc mật khẩu";
+            helpTextRegis.style.color = "red";
+        }
+    });
+}
+
+checkSignUp();
+
 function onPage()
 {
     window.location.href = "home/home.html";

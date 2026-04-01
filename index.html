@@ -18,10 +18,10 @@
 
         <form id="login-form" class="auth-form active">
             <h2>Chào mừng trở lại!</h2>
-            <div class="input-group">
+            <div class="input-group email">
                 <input type="email" placeholder="Nhập email...">
             </div>
-            <div class="input-group" style="position: relative;">
+            <div class="input-group pass1" style="position: relative;">
                 <input type="password" id="pass1" placeholder="Nhập mật khẩu">
                 <i id="eye1" class="bi bi-eye-slash-fill" onclick="togglePassword()"></i>
             </div>
@@ -37,17 +37,24 @@
 
         <form id="register-form" class="auth-form">
             <h2>Tạo tài khoản</h2>
-            <div class="input-group">
+            <div class="input-group full-name">
                 <input id="fullname" type="text" placeholder="Nhập họ tên của bạn..." >
+                <small id="help-text-name"></small>
             </div>
-            <div class="input-group">
+            <div class="input-group email">
                 <input id="email" type="email" placeholder="Nhập email của bạn">
+                <small id="help-text-email"></small>
             </div>
-            <div class="input-group" style="position: relative;">
-                <input type="password" id="pass2" placeholder="Tạo mật khẩu an toàn..."> 
+            <div class="input-group pass" style="position: relative;">
+                <input type="password" id="pass2" placeholder="Tạo mật khẩu an toàn...">
                 <i id="eye2" class="bi bi-eye-slash-fill" onclick="togglePassword()"></i>
             </div>
-            <button type="submit" class="submit-btn">ĐĂNG KÝ MỚI</button>
+            <div class="text-pass">
+                <small id="help-text-pass"></small>
+            </div>
+            
+            <button id="new-register" type="button" class="submit-btn">ĐĂNG KÝ MỚI</button>
+            <small id="help-text-regis"></small>
         </form>
     </div>
     
