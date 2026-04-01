@@ -34,7 +34,7 @@ function clearTabColor()
 
 
 function togglePassword() {
-    let pass1 = document.getElementById("pass1");
+    let pass1 = document.getElementById("sign-in-pass");
     let pass2 = document.getElementById("pass2");
     let eye1 = document.getElementById("eye1");
     let eye2 = document.getElementById("eye2");
@@ -84,6 +84,9 @@ function checkRegexFalse(p)
     p.style.color = "red";
 }
 
+let inputPass = "";
+let inputEmail = "";
+
 function checkSignUp() {
     const fullName = document.querySelector('#fullname');
     const regexFullName = /^[A-Z][a-z]*(\s[A-Z][a-z]*)+$/;
@@ -103,6 +106,7 @@ function checkSignUp() {
     let checkEmail = false;
     let checkPass = false;
 
+    
 
     fullName.addEventListener('input', () => {
         if(regexFullName.test(fullName.value))
@@ -121,6 +125,7 @@ function checkSignUp() {
         if(regexEmail.test(email.value))
         {
             checkRegexTrue(helpTextEmail);
+            inputEmail = email.value;
             checkEmail = true;
         }
         else
@@ -129,11 +134,13 @@ function checkSignUp() {
             checkEmail = false;
         }
     });
-
+    
+    
     password.addEventListener('input', () => {
         if(regexPassword.test(password.value))
-        {
+        {  
             checkRegexTrue(helpTextPass);
+            inputPass = password.value;
             checkPass = true;
         }
         else
@@ -165,14 +172,29 @@ function checkSignUp() {
 
 checkSignUp();
 
-function onPage()
-{
-    window.location.href = "home/home.html";
+function checkSignIn() {
+    const signInEmail = document.querySelector('#sign-in-email');
+    const signInPass = document.querySelector('#sign-in-pass');
+    const submitBtn = document.querySelector('#submit-btn');
+    const helpTextSignIn = document.querySelector('#help-text-signin');
+    
+
+    submitBtn.addEventListener('click', () => {
+        let currentEmail = signInEmail.value;
+        let currentPass = signInPass.value;
+
+        if(currentEmail === inputEmail && currentPass === inputPass)
+        {
+            helpTextSignIn.innerText = "Đăng nhập thành công! Đang vào trang chủ...";
+            helpTextSignIn.style.color = "green";
+            window.location.href = "home/home.html";
+        }
+        else
+        {
+            helpTextSignIn.innerText = "Sai tài khoản hoặc mật khẩu";
+            helpTextSignIn.style.color = "red";
+        }
+    });
 }
 
-const submitBtn = document.getElementById('submit-btn');
-
-submitBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    onPage();
-})
+checkSignIn();
