@@ -166,6 +166,7 @@ function checkSignUp() {
         {
             helpTextRegis.innerText = "Đăng kí thất bại, mời xem lại tên, email hoặc mật khẩu";
             helpTextRegis.style.color = "red";
+            window.onload();
         }
     });
 }
@@ -182,17 +183,25 @@ function checkSignIn() {
     submitBtn.addEventListener('click', () => {
         let currentEmail = signInEmail.value;
         let currentPass = signInPass.value;
-
-        if(currentEmail === inputEmail && currentPass === inputPass)
+        if(currentEmail === "" || currentPass === "")
         {
-            helpTextSignIn.innerText = "Đăng nhập thành công! Đang vào trang chủ...";
-            helpTextSignIn.style.color = "green";
-            window.location.href = "home/home.html";
+            helpTextSignIn.innerText = "Vui lòng điền đầy đủ thông tin";
+            helpTextSignIn.style.color = "red";
         }
         else
         {
-            helpTextSignIn.innerText = "Sai tài khoản hoặc mật khẩu";
-            helpTextSignIn.style.color = "red";
+            if(currentEmail === inputEmail && currentPass === inputPass)
+            {
+                helpTextSignIn.innerText = "Đăng nhập thành công! Đang vào trang chủ...";
+                helpTextSignIn.style.color = "green";
+                window.location.href = "home/home.html";      
+
+            }
+            else
+            {
+                helpTextSignIn.innerText = "Sai tài khoản hoặc mật khẩu";
+                helpTextSignIn.style.color = "red";
+            }
         }
     });
 }
