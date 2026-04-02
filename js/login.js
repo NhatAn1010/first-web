@@ -146,12 +146,14 @@ function checkSignUp() {
         {
             helpTextRegis.innerText = "Đăng kí thành công";
             helpTextRegis.style.color = "green";
-            switchTab('login');
-            clearTabColor();
-            const loginTab = document.getElementById('login');
-            loginTab.style.color = "green";
-            loginTab.style.textDecoration = "underline";
-            loginTab.style.textUnderlineOffset = "10px";
+            setTimeout(() => {
+                switchTab('login');
+                clearTabColor();
+                const loginTab = document.getElementById('login');
+                loginTab.style.color = "green";
+                loginTab.style.textDecoration = "underline";
+                loginTab.style.textUnderlineOffset = "10px";
+            }, 1500);
         }
         else
         {
@@ -186,7 +188,9 @@ function checkSignIn() {
             {
                 helpTextSignIn.innerText = "Đăng nhập thành công! Đang vào trang chủ...";
                 helpTextSignIn.style.color = "green";
-                window.location.href = "home/home.html";      
+                setTimeout(() => {
+                    window.location.href = "home/home.html";
+                }, 1200);      
 
             }
             else
