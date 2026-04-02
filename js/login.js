@@ -25,7 +25,7 @@ function updateTabColor(p) {
     p.style.textUnderlineOffset = "10px";
 }
 
-loginTab.addEventListener('click', () => {
+loginTab.addEventListener('click', () => { 
     updateTabColor(loginTab);
 })
 
@@ -60,16 +60,6 @@ function togglePassword() {
         eye2.className = "bi bi-eye-slash-fill";
     }
 }
-
-/*
-    id = fullname
-    id = email
-    id = pass2
-    tên tối đa 2 chữ cái, viết hoa chữ cái đầu
-    ví dụ: Nguyễn Văn A
-
-    email  tối đa 10 chữ cái sau @
- */
 
 function checkRegexTrue(p) {
     p.innerText = "Nhập đúng";
