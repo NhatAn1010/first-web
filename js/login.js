@@ -174,6 +174,7 @@ function checkSignIn() {
     submitBtn.addEventListener('click', () => {
         let currentEmail = signInEmail.value;
         let currentPass = signInPass.value;
+        
         if(currentEmail === "" || currentPass === "")
         {
             helpTextSignIn.innerText = "Vui lòng điền đầy đủ thông tin";
